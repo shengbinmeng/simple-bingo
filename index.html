@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f5f2eb" />
+    <title>Your Bingo Card — Bingo Game</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="card">
+    <main class="app">
+      <header>
+        <div class="brand">
+          <span class="brand-icon" aria-hidden="true">B</span>
+          <span><strong>Bingo Game</strong><small>A little luck, a lot of fun.</small></span>
+        </div>
+        <div class="header-actions">
+          <label class="card-count-label" for="card-count">Cards</label>
+          <select class="card-count" id="card-count" aria-label="Number of bingo cards">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+          <button class="new-game" id="new-game" type="button">↻ <span>New game</span></button>
+        </div>
+      </header>
+
+      <div class="cards-container" id="cards-container" data-count="1"></div>
+      <template id="card-template">
+        <section class="card board-card">
+          <div class="card-heading">
+            <div>
+              <h1>Your card</h1>
+              <p>Tap the squares to mark your numbers.</p>
+            </div>
+            <span class="game-status">Your turn</span>
+          </div>
+          <div class="bingo-head" aria-hidden="true">
+            <div>B</div><div>I</div><div>N</div><div>G</div><div>O</div>
+          </div>
+          <div class="bingo-grid" role="grid" aria-label="Bingo numbers"></div>
+          <div class="card-footer">
+            <p class="hint"><strong>How to play:</strong> Tap any square to mark or unmark it.</p>
+            <span class="win-lines">5 in a row wins</span>
+          </div>
+        </section>
+      </template>
+    </main>
+    <div class="toast" id="toast" role="status" aria-live="assertive">BINGO! You got five in a row!</div>
+    <script src="app.js"></script>
+  </body>
+</html>

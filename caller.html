@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f5f2eb" />
+    <title>Number Caller — Bingo Game</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="caller">
+    <main class="app">
+      <header>
+        <div class="brand">
+          <span class="brand-icon" aria-hidden="true">B</span>
+          <span><strong>Bingo Game</strong><small>A little luck, a lot of fun.</small></span>
+        </div>
+      </header>
+
+      <div class="caller-layout">
+        <section class="sidebar-card draw-card">
+          <div class="draw-label">Now calling</div>
+          <button class="draw-ball empty" id="draw-ball" type="button" aria-label="Number display" aria-live="polite">B–O</button>
+          <button class="draw-button" id="draw-button" type="button">Draw a number</button>
+          <label class="difficulty-control" for="difficulty-select">
+            <span>Difficulty</span>
+            <select id="difficulty-select" class="difficulty-select">
+              <option value="1">Level 1: Number calls</option>
+              <option value="2">Level 2: Math clues</option>
+              <option value="3">Level 3: Two-step clues</option>
+              <option value="4">Level 4: Math clues + division</option>
+            </select>
+          </label>
+          <p class="caller-hint">Level 1 calls numbers directly. Level 2 uses one-step math clues; Level 3 uses two-step clues; Level 4 also includes division clues.</p>
+        </section>
+
+        <section class="sidebar-card called-card">
+          <div class="calls-heading">
+            <h1>Called numbers</h1>
+            <span class="calls-count" id="calls-count">0 / 75</span>
+          </div>
+          <div class="calls-list" id="calls-list"><span class="empty-calls">Numbers will show up here</span></div>
+        </section>
+      </div>
+
+      <div class="caller-actions">
+        <p class="rules"><strong>Quick rules</strong> · Get five marked squares in a row, column, or diagonal. The center square is free!</p>
+        <button class="new-game" id="new-game" type="button">↻ <span>New game</span></button>
+      </div>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
